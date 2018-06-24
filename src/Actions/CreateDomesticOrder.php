@@ -40,7 +40,7 @@ class CreateDomesticOrder extends BaseAction
 {
     const ACTION = 'orders/domestics';
 
-    const METHOD = 'get';
+    const METHOD = 'post';
 
     protected $_data = [
         'l' => 10,
