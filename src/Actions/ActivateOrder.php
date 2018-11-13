@@ -7,11 +7,11 @@ use aryraditya\Shipper\BaseAction;
 /**
  * @package aryraditya\Shipper\Actions
  *
- * @property integer $activate 0 for order deactivation and 1 for it's activation
+ * @property integer $active 0 for order deactivation and 1 for it's activation
  */
 class ActivateOrder extends BaseAction
 {
-    const ACTION = 'activation/{orderID}';
+    const ACTION = 'activations/{orderID}';
 
     const METHOD = 'put';
 
@@ -26,7 +26,7 @@ class ActivateOrder extends BaseAction
      * @var array
      */
     protected $_data    = [
-        'activate'  => 1
+        'active'  => 1
     ];
 
 }
