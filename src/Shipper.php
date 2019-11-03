@@ -59,7 +59,7 @@ class Shipper
 
     const URL_PROD  = 'https://api.shipper.id/prod/public/v1/';
 
-    const URL_SANDBOX   = 'https://api.shipper.id/sandbox/public/v1/';
+    const URL_SANDBOX   = 'https://sandbox-api.shipper.id/public/v1/';
 
     /**
      * Shipper constructor.
