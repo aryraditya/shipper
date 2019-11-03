@@ -39,7 +39,7 @@ class Request
         try {
             $response    = $client->request($method, $action, $options);
         } catch(RequestException $e) {
-            $response    = $e->getResponse()->getBody()->getContents();
+            $response    = $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null;
             $this->writeLog($method, $data, $e, $response);
         }
 
