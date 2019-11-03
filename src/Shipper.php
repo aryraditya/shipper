@@ -9,6 +9,7 @@ use aryraditya\Shipper\Actions\GenerateAWB;
 use aryraditya\Shipper\Actions\GetAreas;
 use aryraditya\Shipper\Actions\GetAWB;
 use aryraditya\Shipper\Actions\GetCities;
+use aryraditya\Shipper\Actions\GetCountries;
 use aryraditya\Shipper\Actions\GetDomesticRates;
 use aryraditya\Shipper\Actions\GetInternationalRates;
 use aryraditya\Shipper\Actions\GetLogisticsInCity;
@@ -34,6 +35,7 @@ use aryraditya\Shipper\Actions\UpdateOrder;
  * @method GetAreas GetAreas
  * @method GetAWB GetAWB
  * @method GetCities GetCities
+ * @method GetCountries GetCountries
  * @method GetDomesticRates GetDomesticRates
  * @method GetInternationalRates GetInternationalRates
  * @method GetLogisticsInCity GetLogisticsInCity
