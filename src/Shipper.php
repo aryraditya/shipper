@@ -53,6 +53,8 @@ class Shipper
 
     public $baseUrl;
 
+    public $throwErrors;
+
     const URL_PROD  = 'https://api.shipper.id/prod/public/v1/';
 
     const URL_SANDBOX   = 'https://api.shipper.id/sandbox/public/v1/';
@@ -62,11 +64,13 @@ class Shipper
      *
      * @param string|null $key
      * @param string|null $baseUrl
+     * @param bool $throwErrors
      */
-    public function __construct($key = null, $baseUrl = null)
+    public function __construct($key = null, $baseUrl = null, $throwErrors = false)
     {
         $this->setKey($key);
         $this->setBaseUrl($baseUrl);
+        $this->setThrowErrors($throwErrors);
     }
 
     /**
@@ -94,13 +98,25 @@ class Shipper
     }
 
     /**
+     * Set whether to throw errors
+     * @param bool $value
+     *
+     * @return $this
+     */
+    public function setThrowErrors($value)
+    {
+        $this->throwErrors = $value;
+        return $this;
+    }
+
+    /**
      * Shipper Client Request
      *
      * @return Request
      */
     public function client()
     {
-        return new Request($this->key, $this->baseUrl);
+        return new Request($this->key, $this->baseUrl, $this->throwErrors);
     }
 
     /**
