@@ -2,6 +2,7 @@
 
 namespace aryraditya\Shipper;
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
@@ -15,9 +16,12 @@ class Request
 
     private $key;
 
-    public function __construct($key, $baseUrl) {
+    private $throwErrors;
+
+    public function __construct($key, $baseUrl, $throwErrors = false) {
         $this->key = $key;
         $this->baseUrl = $this->parseUrl($baseUrl, '/');
+        $this->throwErrors = $throwErrors;
     }
 
     public function request($method, $action, $data = []) {
@@ -40,7 +44,12 @@ class Request
             $response    = $client->request($method, $action, $options);
         } catch(RequestException $e) {
             $response    = $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null;
-            $this->writeLog($method, $data, $e, $response);
+          
+            if ($this->throwErrors) {
+                throw $response ? new Exception($response) : $e;
+            } else {
+                $this->writeLog($method, $data, $e, $response);
+            }
         }
 
         return $this->parseResponse($response);
