@@ -43,9 +43,10 @@ class Request
         try {
             $response    = $client->request($method, $action, $options);
         } catch(RequestException $e) {
-            $response    = $e->getResponse()->getBody()->getContents();
+            $response    = $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null;
+          
             if ($this->throwErrors) {
-                throw new Exception($response);
+                throw $response ? new Exception($response) : $e;
             } else {
                 $this->writeLog($method, $data, $e, $response);
             }

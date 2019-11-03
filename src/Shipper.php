@@ -4,11 +4,13 @@ namespace aryraditya\Shipper;
 use aryraditya\Shipper\Actions\ActivateOrder;
 use aryraditya\Shipper\Actions\CancelOrder;
 use aryraditya\Shipper\Actions\CreateDomesticOrder;
+use aryraditya\Shipper\Actions\CreateInternationalOrder;
 use aryraditya\Shipper\Actions\CreateMerchant;
 use aryraditya\Shipper\Actions\GenerateAWB;
 use aryraditya\Shipper\Actions\GetAreas;
 use aryraditya\Shipper\Actions\GetAWB;
 use aryraditya\Shipper\Actions\GetCities;
+use aryraditya\Shipper\Actions\GetCountries;
 use aryraditya\Shipper\Actions\GetDomesticRates;
 use aryraditya\Shipper\Actions\GetInternationalRates;
 use aryraditya\Shipper\Actions\GetLogisticsInCity;
@@ -29,11 +31,13 @@ use aryraditya\Shipper\Actions\UpdateOrder;
  * @method ActivateOrder ActivateOrder
  * @method CancelOrder CancelOrder
  * @method CreateDomesticOrder CreateDomesticOrder
+ * @method CreateInternationalOrder CreateInternationalOrder
  * @method CreateMerchant CreateMerchant
  * @method GenerateAWB GenerateAWB
  * @method GetAreas GetAreas
  * @method GetAWB GetAWB
  * @method GetCities GetCities
+ * @method GetCountries GetCountries
  * @method GetDomesticRates GetDomesticRates
  * @method GetInternationalRates GetInternationalRates
  * @method GetLogisticsInCity GetLogisticsInCity
@@ -57,7 +61,7 @@ class Shipper
 
     const URL_PROD  = 'https://api.shipper.id/prod/public/v1/';
 
-    const URL_SANDBOX   = 'https://api.shipper.id/sandbox/public/v1/';
+    const URL_SANDBOX   = 'https://sandbox-api.shipper.id/public/v1/';
 
     /**
      * Shipper constructor.
