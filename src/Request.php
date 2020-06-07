@@ -34,6 +34,15 @@ class Request
             ]
         ];
 
+        foreach ($data as &$value) {
+            if ($value instanceof \DateTime) {
+                $value = $value
+                    ->setTimezone(new \DateTimeZone('Asia/Jakarta'))
+                    ->format('Y-m-d H:i:s');
+            }
+        }
+        unset($value);
+
         if(in_array($method, ['head', 'get'])) {
             $options['query'] = array_merge($options['query'], $data );
         } else {
