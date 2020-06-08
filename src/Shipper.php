@@ -3,10 +3,12 @@
 namespace aryraditya\Shipper;
 use aryraditya\Shipper\Actions\ActivateOrder;
 use aryraditya\Shipper\Actions\CancelOrder;
+use aryraditya\Shipper\Actions\CancelPickup;
 use aryraditya\Shipper\Actions\CreateDomesticOrder;
 use aryraditya\Shipper\Actions\CreateInternationalOrder;
 use aryraditya\Shipper\Actions\CreateMerchant;
 use aryraditya\Shipper\Actions\GenerateAWB;
+use aryraditya\Shipper\Actions\GetAgents;
 use aryraditya\Shipper\Actions\GetAreas;
 use aryraditya\Shipper\Actions\GetAWB;
 use aryraditya\Shipper\Actions\GetCities;
@@ -20,6 +22,7 @@ use aryraditya\Shipper\Actions\GetOrderID;
 use aryraditya\Shipper\Actions\GetProvinces;
 use aryraditya\Shipper\Actions\GetSuburbs;
 use aryraditya\Shipper\Actions\GetTrackingStatus;
+use aryraditya\Shipper\Actions\PickupRequest;
 use aryraditya\Shipper\Actions\UpdateAWB;
 use aryraditya\Shipper\Actions\UpdateMerchant;
 use aryraditya\Shipper\Actions\UpdateOrder;
@@ -30,10 +33,12 @@ use aryraditya\Shipper\Actions\UpdateOrder;
  *
  * @method ActivateOrder ActivateOrder
  * @method CancelOrder CancelOrder
+ * @method CancelPickup CancelPickup
  * @method CreateDomesticOrder CreateDomesticOrder
  * @method CreateInternationalOrder CreateInternationalOrder
  * @method CreateMerchant CreateMerchant
  * @method GenerateAWB GenerateAWB
+ * @method GetAgents GetAgents
  * @method GetAreas GetAreas
  * @method GetAWB GetAWB
  * @method GetCities GetCities
@@ -47,6 +52,7 @@ use aryraditya\Shipper\Actions\UpdateOrder;
  * @method GetProvinces GetProvinces
  * @method GetSuburbs GetSuburbs
  * @method GetTrackingStatus GetTrackingStatus
+ * @method PickupRequest PickupRequest
  * @method UpdateAWB UpdateAWB
  * @method UpdateMerchant UpdateMerchant
  * @method UpdateOrder UpdateOrder
