@@ -32,7 +32,7 @@ class GetOrderDetail extends BaseAction
         $checksum = $checksum ?: $this->getLabelChecksum();
 
         return 'https://shipper.id/label/sticker.php?' . http_build_query([
-            'oid'   => $this->orderID,
+            'oid'   => [$this->orderID],
             'uid'   => $checksum
         ]);
     }
